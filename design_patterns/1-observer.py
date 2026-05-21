@@ -11,7 +11,8 @@ class NewsSubject:
     def __init__(self) -> None:
         self._subs: dict[Observer, set[str] | None] = {}
 
-    def subscribe(self, observer: Observer, topics: set[str] | None = None) -> None:
+    def subscribe(self, observer: Observer,
+                  topics: set[str] | None = None) -> None:
         if observer in self._subs:
             return
         self._subs[observer] = topics
